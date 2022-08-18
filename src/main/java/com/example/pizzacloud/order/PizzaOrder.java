@@ -15,7 +15,9 @@ public class PizzaOrder {
     private String entrance;
     private String floor;
     private String doorPhone;
-
+    private String ccNumber;
+    private String ccExpiration;
+    private String ccCVV;
     private List<Pizza> pizza = new ArrayList<>();
 
     public void addPizza(Pizza pizza){
