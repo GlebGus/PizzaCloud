@@ -1,4 +1,4 @@
-package Meal;
+package meal;
 
 import lombok.Data;
 
