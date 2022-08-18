@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Arrays;
@@ -49,6 +50,13 @@ for(Type type: types){
         model.addAttribute("pizza", new Pizza());
         return "design";
     }
+    @PostMapping
+    public String processPizza(Pizza pizza){
+        //save the pizza
+        log.info("Processing pizza: " + pizza);
+        return "redirect:/orders/current";
+    }
+
     private Iterable<Ingredient> filterByType(
             List<Ingredient> ingredients, Type type){
         return ingredients.stream()
