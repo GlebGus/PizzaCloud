@@ -1,6 +1,6 @@
-package order;
+package com.example.pizzacloud.order;
 
-import meal.Pizza;
+import com.example.pizzacloud.meal.Pizza;
 import lombok.Data;
 
 import java.util.ArrayList;

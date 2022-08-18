@@ -1,6 +1,6 @@
 package com.example.pizzacloud;
 
-import controller.PizzaController;
+import com.example.pizzacloud.controller.PizzaController;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ private MockMvc mockMvc;
         public void testHomePage() throws Exception{
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("index"))
+                .andExpect(view().name("home"))
                 .andExpect(content().string(containsString("Welcome to...")));
         }
 }

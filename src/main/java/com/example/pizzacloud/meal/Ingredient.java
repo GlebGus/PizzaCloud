@@ -1,4 +1,4 @@
-package meal;
+package com.example.pizzacloud.meal;
 
 import lombok.Data;
 
@@ -8,7 +8,8 @@ public class Ingredient {
     public final String name;
     public final Type type;
 
+
     public enum Type {
-        SAUCE, SEAFOODS, VEGGIES, MEAT, BOARD
+        SAUCE, SEAFOODS, VEGGIES, MEAT, BOARD,
     }
 }

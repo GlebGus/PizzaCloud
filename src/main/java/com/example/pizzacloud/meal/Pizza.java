@@ -1,4 +1,4 @@
-package meal;
+package com.example.pizzacloud.meal;
 
 import lombok.Data;
 

@@ -1,19 +1,17 @@
-package orderController;
+package com.example.pizzacloud.orderController;
 
 import lombok.extern.slf4j.Slf4j;
-import meal.Ingredient;
-import meal.Ingredient.Type;
-import meal.Pizza;
+import com.example.pizzacloud.meal.Ingredient;
+import com.example.pizzacloud.meal.Ingredient.Type;
+import com.example.pizzacloud.meal.Pizza;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -23,16 +21,22 @@ public class DesignPizzaController {
     @ModelAttribute
             public void addIngredientToModel(Model model) {
         List<Ingredient> ingredients = Arrays.asList(
-                new Ingredient("FLTO", "Margherita", Type.VEGGIES),
-                new Ingredient("COTO", "Marinara", Type.SAUCE),
-                new Ingredient("GRBF", "Carbonara", Type.SEAFOODS),
-                new Ingredient("CARN", "Frutti di Mare", Type.SEAFOODS),
-                new Ingredient("TMTO", "Quattro Formaggi", Type.VEGGIES),
-                new Ingredient("LETC", "Napoletana", Type.VEGGIES),
-                new Ingredient("CHED", "Crudo", Type.SAUCE),
-                new Ingredient("JACK", "Montanara", Type.SEAFOODS),
-                new Ingredient("SLSA", "Emiliana", Type.SAUCE),
-                new Ingredient("SRCR", "Romana", Type.SAUCE)
+                new Ingredient("FLTO", "Cheesy", Type.SAUCE ),
+                new Ingredient("COTO", "Tomato", Type.SAUCE),
+                new Ingredient("GRBF", "Semi-sweet", Type.SAUCE),
+                new Ingredient("CARN", "Garlic", Type.SAUCE),
+                new Ingredient("TMTO", "Tomato", Type.VEGGIES),
+                new Ingredient("LETC", "Cucumber", Type.VEGGIES),
+                new Ingredient("CHED", "Pepper", Type.VEGGIES),
+                new Ingredient("JACK", "Cheesy", Type.BOARD),
+                new Ingredient("SLSA", "Lush", Type.BOARD),
+                new Ingredient("SRCR", "Chicken", Type.MEAT),
+                new Ingredient("SLMN", "Salmon", Type.MEAT),
+                new Ingredient("PRKP", "Pork", Type.MEAT),
+                new Ingredient("CRBB", "Crab", Type.SEAFOODS),
+                new Ingredient("OYST", "Oyster", Type.SEAFOODS),
+                new Ingredient("SHMP", "Shrimp", Type.SEAFOODS)
+
         );
 Type[] types = Ingredient.Type.values();
 for(Type type: types){
