@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 public class Pizza {
 @NotNull
-@Size(min = 2, message = "Name must be at least 2 characters long")
+@Size(min = 4, message = "Name must be at least 4 characters long")
     private String name;
 @NotNull
 @Size (min = 1, message = "You must choose at least 1 ingredient")
