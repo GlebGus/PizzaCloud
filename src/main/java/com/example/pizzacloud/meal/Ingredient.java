@@ -3,6 +3,7 @@ package com.example.pizzacloud.meal;
 import lombok.Data;
 
 @Data
+
 public class Ingredient {
     public final String id;
     public final String name;

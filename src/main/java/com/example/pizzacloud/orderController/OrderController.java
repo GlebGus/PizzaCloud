@@ -16,16 +16,18 @@ import javax.validation.Valid;
 @RequestMapping("/orders")
 public class OrderController {
     @GetMapping("/current")
-    public String orderForm(Model model){
+    public String orderForm(Model model) {
         model.addAttribute("pizzaOrder", new PizzaOrder());
         return "orderForm";
     }
+
     @PostMapping
-    public String processOrder(@Valid PizzaOrder order, Errors errors){
-        if (errors.hasErrors()){
-return "orderForm";
+    public String processOrder(@Valid PizzaOrder order, Errors errors) {
+        if (errors.hasErrors()) {
+            return "orderForm";
         }
         log.info("Order submitted: " + order);
         return "redirect:/";
     }
 }
+
