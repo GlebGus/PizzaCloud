@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Slf4j
 @Controller
@@ -27,11 +28,14 @@ public class DesignPizzaController {
 
     @ModelAttribute
     public void addIngredientToModel(Model model) {
-        List<Ingredient> ingredients = repository.findAll();
+        Iterable<Ingredient> ingredients = repository.findAll();
+        List<Ingredient> result =
+                StreamSupport.stream(ingredients.spliterator(), false)
+                        .collect(Collectors.toList());
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(),
-                    filterByType(ingredients, type));
+                    filterByType(result, type));
         }
     }
 

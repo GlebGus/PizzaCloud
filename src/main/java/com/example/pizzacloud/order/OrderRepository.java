@@ -1,5 +1,7 @@
 package com.example.pizzacloud.order;
 
-public interface OrderRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface OrderRepository extends CrudRepository<PizzaOrder, Long> {
     PizzaOrder save(PizzaOrder pizzaOrder);
 }
