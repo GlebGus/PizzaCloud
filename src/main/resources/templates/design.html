@@ -52,8 +52,12 @@
             </div>
         </div>
     </div>
+
     <h3>Name your pizza creation:</h3>
     <input type="text" th:field=" *{name}"/>
+    <span class="validationErrors" style="color: red"
+          th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}">Ingridients error</span><br/>
     <br/>
     <button>Submit Your Pizza</button>
 </form>
