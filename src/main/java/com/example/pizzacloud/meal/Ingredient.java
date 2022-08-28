@@ -1,16 +1,21 @@
 package com.example.pizzacloud.meal;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Data
-@Table
+@Entity
 public class Ingredient {
     @Id
-    public final String id;
-    public final String name;
-    public final Type type;
+    public String id;
+    public String name;
+    public Type type;
+
+    public Ingredient() {
+
+    }
 
 
     public enum Type {
