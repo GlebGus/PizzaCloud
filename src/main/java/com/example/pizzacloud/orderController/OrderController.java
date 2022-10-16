@@ -3,6 +3,7 @@ package com.example.pizzacloud.orderController;
 import com.example.pizzacloud.order.OrderRepository;
 import com.example.pizzacloud.order.PizzaOrder;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -18,6 +19,11 @@ import javax.validation.Valid;
 @RequestMapping("/orders")
 public class OrderController {
     private OrderRepository orderRepository;
+
+    public OrderController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     @GetMapping("/current")
     public String orderForm(Model model) {
         model.addAttribute("pizzaOrder", new PizzaOrder());
