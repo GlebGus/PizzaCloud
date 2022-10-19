@@ -2,10 +2,12 @@ package com.example.pizzacloud.meal;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 
 @Data
-@Table
+
+@Document(collection="ingredients")
 public class Ingredient {
     @Id
     public final String id;
