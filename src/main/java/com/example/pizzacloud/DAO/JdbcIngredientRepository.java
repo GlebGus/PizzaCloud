@@ -34,7 +34,6 @@ private JdbcTemplate jdbcTemplate;
                 Optional.of(results.get(0));
     }
 
-
         @Override
     public Ingredient save(Ingredient ingredient) {
         jdbcTemplate.update("insert into Ingredient (id, name, type)values (?,?,?)",
