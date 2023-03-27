@@ -6,8 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.example.pizzacloud.DAO.UserRepository;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.
         SimpleGrantedAuthority;
@@ -16,8 +15,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Entity
 @Data
@@ -59,12 +56,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-    @Bean
-    public UserDetailsService userDetailsService(UserRepository userRepo) {
-        return username -> {
-            User user = userRepo.findByUsername(username);
-            if (user != null) return user;
-            throw new UsernameNotFoundException("User '" + username + "' not found");
-        };
-    }
+
 }

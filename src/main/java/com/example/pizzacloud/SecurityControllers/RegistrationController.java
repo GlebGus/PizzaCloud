@@ -15,12 +15,13 @@ public class RegistrationController {
     private UserRepository userRepo;
     private PasswordEncoder passwordEncoder;
 
-    public RegistrationController(UserRepository userRepo, PasswordEncoder passwordEncoder) {
+    public RegistrationController(
+            UserRepository userRepo, PasswordEncoder passwordEncoder) {
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
     }
     @GetMapping
-    public String registerForm(){
+    public String registerForm() {
         return "registration";
     }
     @PostMapping
@@ -28,5 +29,4 @@ public class RegistrationController {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
-
 }
